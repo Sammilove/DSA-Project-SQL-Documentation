@@ -43,7 +43,7 @@
 ### 2.	Collect and act on customer feedback
 ### 3.	Provide higher discount margins
 ### 4.	Offer personalized product bundles
-### 6.	Promote through loyalty programs
+### 5.	Promote through loyalty programs
 
 ### 5️. Shipping Method with Highest Cost
 
@@ -119,7 +119,7 @@
 ### •	Focus promotions on low-revenue regions and customers
 ### •	Personalize product offerings for top buyers
 ### •	Leverage Technology category trends
-### •	Improve return handling and customer satisfaction
+### •	Improve return handling and customer satisfaction.
 
 ## 🔧 Tools Used:
 ### •	SQL Server Management Studio (SSMS)
