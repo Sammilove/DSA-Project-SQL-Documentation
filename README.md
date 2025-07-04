@@ -4,7 +4,7 @@
 ### Analyze historical sales and customer order data (2009–2012) for Kultra Mega Stores (KMS), supporting the Abuja division. The goal is to extract insights, identify top-performing segments, and offer actionable recommendations to management.
 
 ## Data Source:
-### **Table Name:** `KMS Sql Case Stud
+### **Table Name:** `KMS Sql Case Study
 ### **Platform:** Microsoft SQL Server
 ### **Time Period:** 2009 – 2012
 ### **Key Columns:**
