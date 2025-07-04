@@ -45,8 +45,8 @@
 ### 4.	Offer personalized product bundles
 ### 5.	Promote through loyalty programs
 
-### 5️. Shipping Method with Highest Cost
 
+### 5️. Shipping Method with Highest Cost
 #### SELECT TOP 1 Ship_Mode, SUM(Shipping_Cost) AS [Total Shipping Cost] 
 ### FROM [dbo].[KMS Sql Case Study] GROUP BY Ship_Mode ORDER BY [Total Shipping Cost] DESC
 ### •Delivery Truck — ₦51,971.94
