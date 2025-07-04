@@ -9,7 +9,7 @@ from [dbo].[KMS Sql Case Study]
 group by product_Category
 order by [Total Sales] Desc
 
-Technology	5984248.17547321
+Technology	₦5984248.17547321
 
 (2)-----Top Three and Bottom Three region in terms of Sales
 
@@ -18,18 +18,18 @@ from [dbo].[KMS Sql Case Study]
 group by Region
 order by [Total Sales] Desc
 
-West-		3597549.269871
-Ontario-	3063212.47638369
-Prarie-		2837304.60503292
+West-		₦3597549.269871
+Ontario-	₦3063212.47638369
+Prarie-		₦2837304.60503292
 
 Select top 3 Region,Sum(Sales) as [Total Sales]
 from [dbo].[KMS Sql Case Study]
 group by Region
 order by [Total Sales] asc
 
-Nunavut-				116376.48383522
-Northwest Territories-	800847.330903053
-Yukon-					975867.375723362
+Nunavut-				₦116376.48383522
+Northwest Territories-	₦800847.330903053
+Yukon-					₦975867.375723362
 
 (3)-----Total Sales os Appliances in Ontario---
 
@@ -38,7 +38,7 @@ from [dbo].[KMS Sql Case Study]
 Where Product_Sub_Category = 'appliances'
 And Region = 'Ontario'
 
-202346.839630127
+₦202346.839630127
 
 (4)-----Recommendation to the Management of KMS on what to do to increase Revenue from the bottom 10 Customers
 
@@ -47,16 +47,16 @@ from [dbo].[KMS Sql Case Study1]
 group by Customer_Name
 order by [Total Sales] asc
 
-Jeremy Farry-	85.7200021743774
-Natalie DeCherney-	125.900001525879
-Nicole Fjeld-	153.030006408691
-Katrina Edelman-	180.760005950928
-Dorothy Dickinson-	198.080001831055
-Christine Kargatis-	293.2200050354
-Eric Murdock-	343.329998016357
-Chris McAfee-	350.180004119873
-Rick Huthwaite-	415.819980621338
-Mark Hamilton-	450.990005493164
+Jeremy Farry-	₦85.7200021743774
+Natalie DeCherney-	₦125.900001525879
+Nicole Fjeld-		₦153.030006408691
+Katrina Edelman-	₦180.760005950928
+Dorothy Dickinson-	₦198.080001831055
+Christine Kargatis-	₦293.2200050354
+Eric Murdock-		₦343.329998016357
+Chris McAfee-		₦350.180004119873
+Rick Huthwaite-		₦415.819980621338
+Mark Hamilton-		₦450.990005493164
 
 --- To increase Revenue from the bottom 10 customers the Management should:
 1. Identify reasons for low revenue 
@@ -72,7 +72,7 @@ from [dbo].[KMS Sql Case Study]
 group by Ship_Mode
 order by [Total Shipping Cost] Desc
 
-Delivery Truck-	51971.9397373199
+Delivery Truck-	₦51971.9397373199
 
 (6)-----The most valuable customers, and what products or services they typically purchase
 
@@ -99,7 +99,7 @@ FROM [KMS Sql Case Study]
 WHERE Customer_Segment='Small Business' 
 ORDER BY Sales DESC
 
-Dennis Kane-	33367.8515625
+Dennis Kane-	₦33367.8515625
 
 (8)------which corporate customer placed the most number or order in 2009 - 2012
 
@@ -119,7 +119,7 @@ WHERE customer_Segment = 'Consumer'
 GROUP BY customer_name
 ORDER BY total_profit DESC
 
-Emily Phan-	34005.44
+Emily Phan-	₦34005.44
 
 (10)-------Which customer returned items, and what segment do they belong--
 
@@ -135,6 +135,7 @@ FROM [dbo].[KMS Sql Case Study]
 GROUP BY Order_Priority,Ship_Mode
 ORDER BY Order_Priority asc
 
----Explanation---
-I think the company did not appropriately spend shipping costs based on the Order Priority because they did not match 
-shipping methods to order priorities, considering b,e my conclusion that the company did not spend shipping costs appropriately.
+-----Conclusion:
+Shipping costs were not aligned with order priorities.
+High-priority orders were not consistently shipped via faster methods (e.g. Express Air), 
+and low-priority orders used costly shipping options.
