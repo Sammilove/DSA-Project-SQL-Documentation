@@ -16,11 +16,8 @@ Analyze historical sales and customer order data (2009–2012) for Kultra Mega S
 
 ###  Product Category with the Highest Sales
 
-SELECT TOP 1 Product_Category, SUM(Sales) AS [Total Sales]
-FROM [dbo].[KMS Sql Case Study]
-GROUP BY Product_Category
-ORDER BY [Total Sales] DESC
-•	🏆 Technology — ₦5,984,248.18
+### SELECT TOP 1 Product_Category, SUM(Sales) AS [Total Sales]FROM [dbo].[KMS Sql Case Study] GROUP BY Product_Category ORDER BY [Total Sales] DESC
+### Technology — ₦5,984,248.18
 ________________________________________
 2️⃣ Top & Bottom 3 Regions by Sales
 🔝 Top 3:
