@@ -52,6 +52,7 @@
 ### •Delivery Truck — ₦51,971.94
 
 ## Case Scenario II — Customer & Segmentation Insights
+
 ### 6️. Most Valuable Customers & Purchases
 
 #### SELECT TOP 10 Customer_Name, Product_Category
