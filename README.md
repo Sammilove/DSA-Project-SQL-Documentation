@@ -3,61 +3,41 @@
 ### Objective:
 Analyze historical sales and customer order data (2009–2012) for Kultra Mega Stores (KMS), supporting the Abuja division. The goal is to extract insights, identify top-performing segments, and offer actionable recommendations to management.
 
----
-
 ## Data Source:
-- **Table Name:** `KMS Sql Case Study`
-- **Platform:** Microsoft SQL Server
-- **Time Period:** 2009 – 2012
-- **Key Columns:**
-- `Order_ID`, `Customer_Name`, `Customer_Segment`, `Product_Category`, `Product_Sub_Category`, `Sales`, `Profit`, `Region`, `Ship_Mode`, `Shipping_Cost`, `Order_Date`, `Order_Priority`
+### **Table Name:** `KMS Sql Case Stud
+### **Platform:** Microsoft SQL Server
+### **Time Period:** 2009 – 2012
+### **Key Columns:**
+### Order_ID`, `Customer_Name`, `Customer_Segment`, `Product_Category`, `Product_Sub_Category`, `Sales`, `Profit`, `Region`, `Ship_Mode`, `Shipping_Cost`, `Order_Date`, `Order_Priority`
 
 ##  Case Scenario I — Regional, Product, and Cost Insights
 
-###  Product Category with the Highest Sales
+### 1. Product Category with the Highest Sales
 
 ### SELECT TOP 1 Product_Category, SUM(Sales) AS [Total Sales]FROM [dbo].[KMS Sql Case Study] GROUP BY Product_Category ORDER BY [Total Sales] DESC
 ### Technology — ₦5,984,248.18
-________________________________________
-2️⃣ Top & Bottom 3 Regions by Sales
-🔝 Top 3:
-sql
-CopyEdit
-SELECT TOP 3 Region, SUM(Sales) AS [Total Sales]
-FROM [dbo].[KMS Sql Case Study]
-GROUP BY Region
-ORDER BY [Total Sales] DESC
-•	West: ₦3,597,549.27
-•	Ontario: ₦3,063,212.48
-•	Prarie: ₦2,837,304.61
-🔻 Bottom 3:
-sql
-CopyEdit
-SELECT TOP 3 Region, SUM(Sales) AS [Total Sales]
-FROM [dbo].[KMS Sql Case Study]
-GROUP BY Region
-ORDER BY [Total Sales] ASC
-•	Nunavut: ₦116,376.48
-•	Northwest Territories: ₦800,847.33
-•	Yukon: ₦975,867.38
-________________________________________
-3️⃣ Total Sales of Appliances in Ontario
-sql
-CopyEdit
-SELECT SUM(Sales) AS [Total Sales]
-FROM [dbo].[KMS Sql Case Study]
-WHERE Product_Sub_Category = 'appliances'
-AND Region = 'Ontario'
-•	💰 ₦202,346.84
-________________________________________
-4️⃣ Bottom 10 Customers & Recommendations
-sql
-CopyEdit
-SELECT TOP 10 Customer_Name, SUM(Sales) AS [Total Sales]
-FROM [dbo].[KMS Sql Case Study1]
-GROUP BY Customer_Name
-ORDER BY [Total Sales] ASC
-Recommendation:
+
+### 2.Top 3 & Bottom 3 Regions by Sales
+
+### SELECT TOP 3 Region, SUM(Sales) AS [Total Sales] FROM [dbo].[KMS Sql Case Study] GROUP BY Region ORDER BY [Total Sales] DESC
+### •	West: ₦3,597,549.27
+### •	Ontario: ₦3,063,212.48
+### •	Prarie: ₦2,837,304.61
+
+### SELECT TOP 3 Region, SUM(Sales) AS [Total Sales] FROM [dbo].[KMS Sql Case Study] GROUP BY Region ORDER BY [Total Sales] ASC
+### •	Nunavut: ₦116,376.48
+### •	Northwest Territories: ₦800,847.33
+### •	Yukon: ₦975,867.38
+
+### 3 Total Sales of Appliances in Ontario
+
+### SELECT SUM(Sales) AS [Total Sales] FROM [dbo].[KMS Sql Case Study] WHERE Product_Sub_Category = 'appliances' AND Region = 'Ontario'
+### •	 ₦202,346.84
+
+### 4️ Bottom 10 Customers & Recommendations
+
+### SELECT TOP 10 Customer_Name, SUM(Sales) AS [Total Sales] FROM [dbo].[KMS Sql Case Study1] GROUP BY Customer_Name ORDER BY [Total Sales] ASC
+### Recommendation:
 1.	Investigate reasons for low revenue per customer
 2.	Collect and act on customer feedback
 3.	Provide higher discount margins
