@@ -1,0 +1,98 @@
+KULTRA MEGA STORES (KMS) DATA ANALYSIS
+
+SELECT * FROM [dbo].[KMS Sql Case Study]
+
+(1)------Product Category that has the highest Sales---
+
+Select top 1 product_Category,Sum(Sales) as [Total Sales]
+from [dbo].[KMS Sql Case Study]
+group by product_Category
+order by [Total Sales] Desc
+
+(2)-----Top Three and Bottom Three region in terms of Sales
+
+Select top 3 Region,Sum(Sales) as [Total Sales]
+from [dbo].[KMS Sql Case Study]
+group by Region
+order by [Total Sales] Desc
+
+Select top 3 Region,Sum(Sales) as [Total Sales]
+from [dbo].[KMS Sql Case Study]
+group by Region
+order by [Total Sales] asc
+
+(3)-----Total Sales os Appliances in Ontario---
+
+Select Sum(Sales) as [Total Sales]
+from [dbo].[KMS Sql Case Study]
+Where Product_Sub_Category = 'appliances'
+And Region = 'Ontario'
+
+(4)-----Recommendation to the Management of KMS on what to do to increase Revenue from the bottom 10 Customers
+
+Select top 10 Customer_Name,Sum(Sales) as [Total Sales]
+from [dbo].[KMS Sql Case Study1]
+group by Customer_Name
+order by [Total Sales] asc
+
+---- to increase Revenue from the bottom 10 customers the Management should:
+1. Identify reasons for low revenue 
+2. Review Customer Feedback and satisfaction levels
+3. Incrase Percentage discount to the customers
+4. Produce relevant products based on purchase history
+5. Promo should be carried out and perhaps more advertisement 
+
+(5)-----Shipping method that incurred the most shipping Cost
+
+Select top 1 ship_Mode, Sum(Shipping_Cost) as [Total Shipping Cost]
+from [dbo].[KMS Sql Case Study]
+group by Ship_Mode
+order by [Total Shipping Cost] Desc
+
+(6)-----The most valuable customers, and what products or services they typically purchase
+
+SELECT TOP 10 Customer_Name,
+Product_Category 
+FROM [KMS Sql Case Study]
+ORDER BY Sales DESC
+
+(7)----- Which small business customer had the highest sales?
+
+SELECT TOP 1 Customer_Name,Sales,Customer_Segment 
+FROM [KMS Sql Case Study]
+WHERE Customer_Segment='Small Business' 
+ORDER BY Sales DESC
+
+(8)------which corporate customer placed the most number or order in 2009 - 2012
+
+SELECT Top 1 customer_name, COUNT(order_id) AS total_orders
+FROM [KMS Sql Case Study]
+WHERE order_date BETWEEN '2009-01-01' AND '2012-12-31' AND customer_Segment = 'Corporate'
+GROUP BY customer_name
+ORDER BY total_orders DESC
+
+(9)----Which customer was the most profitable one----
+SELECT Top 1 customer_name,SUM(Sales) AS total_revenue, 
+ SUM(Profit) AS total_profit
+FROM [KMS Sql Case Study1]
+WHERE customer_Segment = 'Consumer'
+GROUP BY customer_name
+ORDER BY total_profit DESC
+
+(10)-------Which customer returned items, and what segment do they belong--
+
+SELECT DISTINCT Customer_Name,Customer_Segment FROM [KMS Sql Case Study]
+WHERE Order_ID=ANY(select Order_ID from Order_Status
+WHERE Status='Returned')
+
+(11)----Shipping Cost based in the order of Priority----
+
+SELECT Order_Priority,Ship_Mode,COUNT(*) AS No_Of_Priority,SUM(Sales-Profit) as estimated_shipping_cost,
+AVG(DATEDIFF(day, [Order_Date], [Ship_Date])) AS AvgShipDays
+FROM [dbo].[KMS Sql Case Study]
+GROUP BY Order_Priority,Ship_Mode
+ORDER BY Order_Priority asc
+
+---Explanation---
+I think the company did not appropriately spend shipping costs based on the Order Priority because they did not match 
+shipping methods to order priorities, considering b,e my conclusion that the company did not spend shipping costs appropriately.
