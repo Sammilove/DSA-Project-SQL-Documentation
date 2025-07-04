@@ -15,7 +15,7 @@
 ### 1. Product Category with the Highest Sales
 
 #### SELECT TOP 1 Product_Category, SUM(Sales) AS [Total Sales]FROM [dbo].[KMS Sql Case Study] GROUP BY Product_Category ORDER BY [Total Sales] DESC
-### Technology — ₦5,984,248.18
+### • Technology — ₦5,984,248.18
 
 ### 2.Top 3 & Bottom 3 Regions by Sales
 
